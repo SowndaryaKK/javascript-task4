@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+.firstname{
+	background-image: url(img/img1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+}
+lable{
+     color: white;
+}
+#demo 
+{
+	text-align: center;
+}
+#function{
+	text-align: center;
+}
+#date{
+	text-align: center;
+	font-weight: bold;
+}
+.letter{
+	color: white;
+}
+</style>
+<body>
+	
+	<div class="container firstname mt-5">
+			<br><br><h2 class="text-center letter mt-5">Using Else condition</h2>
+		<br><br><br><br>
+		<div class="row">
+
+			<div class="col-lg-1 col-md-2 col-sm-1"></div>
+        	<div class="col-lg-3 col-md-3 col-sm-3 text-right">
+				<lable><b>USER ID:</b></lable>
+        	</div>
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<input type="text" name="name" placeholder="Enter UserId"  id="uname">
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-2"></div>
+
+        </div><br>
+        <div class="row">
+        	<div class="col-lg-1 col-md-2 col-sm-1"></div>
+        	<div class="col-lg-3 col-md-3 col-sm-3 text-right">
+				<lable><b>PASSWORD:</b></lable>
+        	</div>
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<input type="password" name="name" placeholder="Enter Password"  id="pname">
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-2"></div>
+
+        </div><br>
+        <div class="row">
+        	<div class="col-lg-1 col-md-2 col-sm-1"></div>
+        	<div class="col-lg-3 col-md-3 col-sm-3 text-right">
+				<lable><b>CONFIRM PASSWORD:</b></lable>
+        	</div>
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<input type="password" name="name" placeholder="Enter Confirm Password"  id="cpname">
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-2"></div>
+
+        </div><br>
+        
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+	    	<button type="submit" class="btn btn-dark" onclick="ValidateLoginForm()">Submit</button>
+	    </div>
+	    <br><br><br><br>
+	</div>
+	<br><br>
+	<div class="container bg-primary mt-5">
+		<br><br><h2 class="text-center mt-5">Using For Loop</h2>
+		<br><br><br><br>
+		<div class="row">
+
+			<div class="col-lg-1 col-md-2 col-sm-1"></div>
+        	<div class="col-lg-6 col-md-6 col-sm-6 text-center">
+				<input type="text" name="name" placeholder="Enter the Value"  id="textvalue">
+        	</div>
+			<div class="col-lg-4 col-md-4 col-sm-4">
+				<input type="text" name="name" placeholder="Enter the Value"  id="entervalue">
+			</div>
+			<div class="col-lg-1 col-md-1 col-sm-1"></div>
+
+        </div><br>
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+	    	<button type="submit" class="btn btn-dark" onclick="ValidateForm()">Submit</button>
+	    </div><br><br><br>
+	    <p id="demo"></p>
+	</div>
+	<br><br>
+	<div class="container bg-info mt-5">
+		<br><br><h2 class="text-center mt-5">Using While Loop</h2>
+		<br><br><br><br>
+		<div class="row">
+
+			<div class="col-lg-1 col-md-2 col-sm-1"></div>
+        	<div class="col-lg-6 col-md-6 col-sm-6 text-center">
+				<input type="text" name="name" placeholder="Enter the Value"  id="pre">
+        	</div>
+			<div class="col-lg-4 col-md-4 col-sm-4">
+				<input type="text" name="name" placeholder="Enter the Value"  id="post">
+			</div>
+			<div class="col-lg-1 col-md-1 col-sm-1"></div>
+
+        </div><br>
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+	    	<button type="submit" class="btn btn-dark" onclick="MyFunction()">Submit</button>
+	    </div><br><br><br>
+	    <p id="function"></p>
+	</div>
+	<br><br>
+
+	<div class="container bg-info mt-5">
+		<br><br><h2 class="text-center mt-5">Using Switch Condition</h2>
+		<br><br><br><br>
+		<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+	    	<button type="submit" class="btn btn-dark" onclick="data()">Submit</button>
+	    </div>
+	    <p id="date"></p>
+	    <br><br><br><br>
+	</div>
+
+
+
+<script>
+function ValidateLoginForm()
+{
+    var userid = document .getElementById("uname").value;
+    var password = document .getElementById("pname").value;
+    var password1 = document .getElementById("cpname").value;
+
+
+
+      if (userid == "")
+    {
+        alert("Please Enter UserId");
+        
+    }
+
+      else if (password == "")
+    {
+        alert("Please enter a password.");
+        
+    }
+    else if (password1 == "")
+    {
+        alert("Please enter a confirm password.");
+        
+    }
+    else if(password == password1){
+    	alert("login successfully");
+    }
+    else{
+    	alert("password incorrect");
+    }
+}
+
+function ValidateForm()
+{
+	var enter = Number(document .getElementById("textvalue").value);
+    var value = Number(document .getElementById("entervalue").value);
+
+var text = "";
+if (enter < value) {
+
+	for (var i=enter; i < value; i++) {
+  text += i + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+
+}
+else (enter > value)
+{ 
+	for (var i = enter; i >= value; i--) {
+		text += i + "<br>";
+	}
+	
+	document.getElementById("demo").innerHTML = text;
+	}
+	console .log(text)
+}
+
+function MyFunction(){
+	var krish = Number(document .getElementById("pre").value);
+	var sow = Number(document .getElementById("post").value);
+
+	var text = "";
+	if (krish < sow) {
+		var i = krish;
+
+			while (i < sow) {
+	
+			text += "<br> The number is" + i; i++;
+		}
+	
+	}
+	
+
+     else if (krish > sow){
+     	var i = sow;
+     	while(i>krish)
+     	text += "<br> The number is" + i; i--;
+
+ }
+	document .getElementById("function").innerHTML = text;
+	console .log(text);
+       
+
+      }
+	
+   
+function data(){
+
+
+var day;
+switch (new Date().getDay()) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+    day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case  6:
+    day = "Saturday";
+}
+document.getElementById("date").innerHTML = "Today is " + day;
+
+}
+
+
+
+ </script>
+ </body>
+</html>
